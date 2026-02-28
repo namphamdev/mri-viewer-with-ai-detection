@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styles for medical dark theme */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: theme('colors.medical.bg');
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme('colors.medical.border');
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.medical.text-muted');
+}
+
+/* Range input styling */
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 3px;
+  background: theme('colors.medical.panel');
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: theme('colors.medical.accent');
+  cursor: pointer;
+  border: 2px solid theme('colors.medical.bg');
+  box-shadow: 0 0 4px rgba(59, 130, 246, 0.4);
+}
+
+input[type='range']::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: theme('colors.medical.accent');
+  cursor: pointer;
+  border: 2px solid theme('colors.medical.bg');
+}
+
+input[type='range']:disabled::-webkit-slider-thumb {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
